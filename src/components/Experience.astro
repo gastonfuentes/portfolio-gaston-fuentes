@@ -1,0 +1,42 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+
+const EXPERIENCIE = [
+    {
+        date: "Febrero 2022",
+        title: "Subsecretario Institucional Secretaria de Seguridad - Gobierno de la Rioja",
+        description:
+            "Ejecutar plan de comunicación institucional coordinando y articulando el trabajo con todas las áreas dependientes de la secretaria de Seguridad",
+        abilities: [
+            "Liderazgo de equipos multidisciplinarios",
+            "Dirección y desarrollo de equipos de trabajo",
+            "Integración de equipos",
+        ],
+        link: false,
+        latest: true,
+    },
+    {
+        date: "Febrero 2022",
+        title: "Subsecretario Institucional Secretaria de Seguridad - Gobierno de la Rioja",
+        description:
+            "Ejecutar plan de comunicación institucional coordinando y articulando el trabajo con todas las áreas dependientes de la secretaria de Seguridad",
+        abilities: [
+            "Liderazgo de equipos multidisciplinarios",
+            "Dirección y desarrollo de equipos de trabajo",
+            "Integración de equipos",
+        ],
+        link: false,
+        latest: false,
+    },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+        EXPERIENCIE.map((item) => (
+            <li class="mb-10 ms-6">
+                <ExperienceItem {...item} />
+            </li>
+        ))
+    }
+</ol>

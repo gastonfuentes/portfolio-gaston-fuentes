@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Badge from "../components/Badge.astro";
+
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import SocialPill from "../components/SocialPill.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import EmailIcon from "../components/icons/EmailIcon.astro";
+import Experience from "../components/Experience.astro";
+---
+
+<Layout
+	title="Portfolio de Gaston Fuentes - Desarrollador y Programador Web"
+	description="Contrata a Gaston para crear y desarrollar tu app web o movil. Especializado en programacion Front-end."
+>
+	<main class="w-2/4">
+		<section class="py-44">
+			<h1 class="text-white text-5xl font-bold pb-3">
+				Hola, soy Gaston <a
+					href="https://linkedin.com"
+					target="_blank"
+					rel="noopener"><Badge>Disponible para trabajar</Badge></a
+				>
+			</h1>
+			<h2 class="text-xl opacity-80">
+				junior development. Desarrollador web con basta experiencia en
+				el diseño multimedial. La Rioja Argentina 🩵. Me expecializo en
+				el diseño y 89yas8xcyaoisdc desarrollo web daaaaaaaaaaaaaaaaaaaa
+			</h2>
+			<nav class="flex flex-row gap-1">
+				<SocialPill href="https://github.com/gastonfuentes">
+					<GitHubIcon />
+					GitHub
+				</SocialPill>
+
+				<SocialPill
+					href="https://www.linkedin.com/in/gastonnicolasfuentes/"
+				>
+					<LinkedInIcon />
+					LinkedIn
+				</SocialPill>
+
+				<SocialPill
+					href="https://www.linkedin.com/in/gastonnicolasfuentes/"
+				>
+					<EmailIcon />
+					gastonnicolasfuentes@gmail.com
+				</SocialPill>
+			</nav>
+		</section>
+		<section>
+			<Experience />
+		</section>
+	</main>
+</Layout>
