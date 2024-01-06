@@ -1,0 +1,51 @@
+---
+import ReactIcon from "../components/icons/ReactIcon.astro";
+import ReduxIcon from "../components/icons/ReduxIcon.astro";
+
+const TAGS = {
+    REACT: {
+        name: "React",
+        class: "bg-[#23272f] text-[#149eca]",
+        icon: ReactIcon,
+    },
+    REDUX: {
+        name: "Redux",
+        class: "bg-[#764abc] text-white",
+        icon: ReduxIcon,
+    },
+};
+
+const PROJECTS = [
+    {
+        title: "Qatarbets - Sitio de apuestas",
+        description:
+            "En el proyecto final de SoyHenry, Qatarbets, contribuí al diseño de la base de datos con Lucidchart y formé parte del equipo de frontend. Utilicé tecnologías como React, Redux Toolkits y Tailwind CSS para el desarrollo, destacando mi desafío principal en la implementación de filtros y ordenamientos mediante Redux Toolkit.",
+        link: "#",
+        github: "https://github.com/nachoaar/qatarbets-frontend",
+        image: "/qatarbetsWeb.jpg",
+        tags: [TAGS.REACT, TAGS.REDUX],
+    },
+];
+---
+
+{
+    PROJECTS.map((pro) => (
+        <article>
+            <h3 class="text-xl font-semibold text-cyan-500">{pro.title}</h3>
+            <p class="text-md font-extralight text-pretty">{pro.description}</p>
+            <ul>
+                {pro.tags.map((tag) => (
+                    <li class=`  ${tag.class}`>
+                        <span>{<tag.icon />}</span>
+                        {tag.name}
+                    </li>
+                ))}
+            </ul>
+            <img
+                class=" rounded-lg "
+                src={pro.image}
+                alt="captura del proyecto Qatarbets"
+            />
+        </article>
+    ))
+}

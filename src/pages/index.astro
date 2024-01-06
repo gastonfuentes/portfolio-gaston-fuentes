@@ -8,27 +8,38 @@ import SocialPill from "../components/SocialPill.astro";
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 import EmailIcon from "../components/icons/EmailIcon.astro";
 import Experience from "../components/Experience.astro";
+import BriefIcon from "../components/icons/BriefIcon.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import Projects from "../components/Projects.astro";
 ---
 
 <Layout
 	title="Portfolio de Gaston Fuentes - Desarrollador y Programador Web"
 	description="Contrata a Gaston para crear y desarrollar tu app web o movil. Especializado en programacion Front-end."
 >
-	<main class="w-2/4">
-		<section class="py-44">
+	<main class="w-full md:w-2/4">
+		<section class="py-14">
+			<img
+				class="rounded-full size-20 mb-1"
+				src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD23s_cK9IqWa9bQKyK9z2fck1H2ACnnj6QxTzfKVRtHXx27spb3f1Jz889TiOLD1uR0o&usqp=CAU"
+				alt="misho"
+			/>
 			<h1 class="text-white text-5xl font-bold pb-3">
-				Hola, soy Gaston <a
+				Hola, soy Gaston <!-- <a
 					href="https://linkedin.com"
 					target="_blank"
 					rel="noopener"><Badge>Disponible para trabajar</Badge></a
-				>
+				> -->
 			</h1>
-			<h2 class="text-xl opacity-80">
-				junior development. Desarrollador web con basta experiencia en
-				el diseño multimedial. La Rioja Argentina 🩵. Me expecializo en
-				el diseño y 89yas8xcyaoisdc desarrollo web daaaaaaaaaaaaaaaaaaaa
+			<h2 class="text-xl opacity-80 mb-4">
+				<span class="text-cyan-400"
+					>Full Stack Developer y Diseñador Multimedia.</span
+				> Poseo experiencia trabajando con tecnologías como Js, NodeJS, React,
+				Redux, Redux Toolkit, Express, SQL, Sequelize, Tailwind, entre otras.
+				Me gusta complementar toda mi experiencia adquirida como diseñador
+				con la programación.
 			</h2>
-			<nav class="flex flex-row gap-1">
+			<nav class="flex flex-col md:flex-row gap-1">
 				<SocialPill href="https://github.com/gastonfuentes">
 					<GitHubIcon />
 					GitHub
@@ -41,16 +52,28 @@ import Experience from "../components/Experience.astro";
 					LinkedIn
 				</SocialPill>
 
-				<SocialPill
-					href="https://www.linkedin.com/in/gastonnicolasfuentes/"
-				>
+				<SocialPill href="mailto:gastonnicolasfuentes@gmail.com">
 					<EmailIcon />
 					gastonnicolasfuentes@gmail.com
 				</SocialPill>
 			</nav>
 		</section>
-		<section>
+		<section id="experiencia">
+			<h2 class="text-2xl font-bold mb-6 flex gap-2 items-center">
+				<BriefIcon />
+				Experiencia Laboral
+				<hr class="h-px w-1/4 md:w-1/3 bg-slate-50" />
+			</h2>
 			<Experience />
+		</section>
+
+		<section id="proyectos">
+			<h2 class="text-2xl font-bold mb-6 flex gap-2 items-center">
+				<CodeIcon />
+				Proyectos
+				<hr class="h-px w-1/4 md:w-1/3 bg-slate-50" />
+			</h2>
+			<Projects />
 		</section>
 	</main>
 </Layout>
