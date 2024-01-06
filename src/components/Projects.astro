@@ -1,6 +1,7 @@
 ---
 import ReactIcon from "../components/icons/ReactIcon.astro";
 import ReduxIcon from "../components/icons/ReduxIcon.astro";
+import TailwindcssIcon from "../components/icons/Tailwindcss.astro";
 
 const TAGS = {
     REACT: {
@@ -13,6 +14,11 @@ const TAGS = {
         class: "bg-[#764abc] text-white",
         icon: ReduxIcon,
     },
+    TAILWINDCSS: {
+        name: "Tailwindcss",
+        class: "bg-[#152e48] text-white",
+        icon: TailwindcssIcon,
+    },
 };
 
 const PROJECTS = [
@@ -23,29 +29,48 @@ const PROJECTS = [
         link: "#",
         github: "https://github.com/nachoaar/qatarbets-frontend",
         image: "/qatarbetsWeb.jpg",
-        tags: [TAGS.REACT, TAGS.REDUX],
+        tags: [TAGS.REACT, TAGS.REDUX, TAGS.TAILWINDCSS],
+    },
+    {
+        title: "Qatarbets - Sitio de apuestas",
+        description:
+            "En el proyecto final de SoyHenry, Qatarbets, contribuí al diseño de la base de datos con Lucidchart y formé parte del equipo de frontend. Utilicé tecnologías como React, Redux Toolkits y Tailwind CSS para el desarrollo, destacando mi desafío principal en la implementación de filtros y ordenamientos mediante Redux Toolkit.",
+        link: "#",
+        github: "https://github.com/nachoaar/qatarbets-frontend",
+        image: "/qatarbetsAlpha.webp",
+        tags: [TAGS.REACT, TAGS.REDUX, TAGS.TAILWINDCSS],
     },
 ];
 ---
 
 {
     PROJECTS.map((pro) => (
-        <article>
+        <article class="my-8">
             <h3 class="text-xl font-semibold text-cyan-500">{pro.title}</h3>
             <p class="text-md font-extralight text-pretty">{pro.description}</p>
-            <ul>
-                {pro.tags.map((tag) => (
-                    <li class=`  ${tag.class}`>
-                        <span>{<tag.icon />}</span>
-                        {tag.name}
-                    </li>
-                ))}
-            </ul>
-            <img
-                class=" rounded-lg "
-                src={pro.image}
-                alt="captura del proyecto Qatarbets"
-            />
+
+            <section class="flex flex-col md:flex-row md:items-center md:pl-8">
+                <ul class="flex md:flex-col gap-2 my-2">
+                    {pro.tags.map((tag) => (
+                        <li
+                            class={` flex gap-1 py-1 rounded-full px-3 text-sm items-center ${tag.class}`}
+                        >
+                            <span>{<tag.icon />}</span>
+                            {tag.name}
+                        </li>
+                    ))}
+                </ul>
+
+                <img
+                    class=" h-auto max-w-full"
+                    src={pro.image}
+                    alt="captura del proyecto Qatarbets"
+                />
+            </section>
+
+            <div>
+                <h4>Repo</h4>
+            </div>
         </article>
     ))
 }
