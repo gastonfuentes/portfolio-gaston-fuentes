@@ -2,6 +2,10 @@
 import ReactIcon from "../components/icons/ReactIcon.astro";
 import ReduxIcon from "../components/icons/ReduxIcon.astro";
 import TailwindcssIcon from "../components/icons/Tailwindcss.astro";
+import BriefIcon from "./icons/BriefIcon.astro";
+import GitHubIcon from "./icons/GitHubIcon.astro";
+import FigmaIcon from "./icons/FigmaIcon.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
 
 const TAGS = {
     REACT: {
@@ -19,37 +23,47 @@ const TAGS = {
         class: "bg-[#152e48] text-white",
         icon: TailwindcssIcon,
     },
+    FIGMA: {
+        name: "figma",
+        class: "bg-[#2c2e37] text-white",
+        icon: FigmaIcon,
+    },
+    ASTRO: {
+        name: "Astro",
+        class: "bg-white text-[#17191e]",
+        icon: AstroIcon,
+    },
 };
 
 const PROJECTS = [
     {
         title: "Qatarbets - Sitio de apuestas",
         description:
-            "En el proyecto final de SoyHenry, Qatarbets, contribuí al diseño de la base de datos con Lucidchart y formé parte del equipo de frontend. Utilicé tecnologías como React, Redux Toolkits y Tailwind CSS para el desarrollo, destacando mi desafío principal en la implementación de filtros y ordenamientos mediante Redux Toolkit.",
-        link: "#",
-        github: "https://github.com/nachoaar/qatarbets-frontend",
-        image: "/qatarbetsWeb.jpg",
-        tags: [TAGS.REACT, TAGS.REDUX, TAGS.TAILWINDCSS],
-    },
-    {
-        title: "Qatarbets - Sitio de apuestas",
-        description:
-            "En el proyecto final de SoyHenry, Qatarbets, contribuí al diseño de la base de datos con Lucidchart y formé parte del equipo de frontend. Utilicé tecnologías como React, Redux Toolkits y Tailwind CSS para el desarrollo, destacando mi desafío principal en la implementación de filtros y ordenamientos mediante Redux Toolkit.",
-        link: "#",
+            "En el proyecto final de SoyHenry, Qatarbets, lideré el diseño de la interfaz de usuario y de la base de datos. Formé parte del equipo de frontend, utilizando tecnologías como React, Redux Toolkits y Tailwind CSS para el desarrollo. Enfrenté el desafío principal de implementar filtros y ordenamientos mediante Redux Toolkit",
+        link: false,
         github: "https://github.com/nachoaar/qatarbets-frontend",
         image: "/qatarbetsAlpha.webp",
-        tags: [TAGS.REACT, TAGS.REDUX, TAGS.TAILWINDCSS],
+        tags: [TAGS.FIGMA, TAGS.REACT, TAGS.REDUX, TAGS.TAILWINDCSS],
+    },
+    {
+        title: "ElarGas - Sitio web institucional",
+        description:
+            "Desarrollé el sitio web Elargas a partir de un diseño UI proporcionado, utilizando tecnologías avanzadas como Astro, React y Tailwind CSS. Mi enfoque se centró en la implementación eficiente de la interfaz de usuario, asegurando una experiencia web fluida y atractiva para los usuarios finales.",
+        link: false,
+        github: "https://github.com/nachoaar/qatarbets-frontend",
+        image: "/qatarbetsAlpha.webp",
+        tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWINDCSS],
     },
 ];
 ---
 
 {
     PROJECTS.map((pro) => (
-        <article class="my-8">
-            <h3 class="text-2xl font-semibold">{pro.title}</h3>
-            <p class="text-md font-extralight text-pretty">{pro.description}</p>
+        <article class="my-10">
+            <h3 class="text-2xl font-semibold my-1">{pro.title}</h3>
+            <p class="text-md text-pretty">{pro.description}</p>
 
-            <section class="flex flex-col md:flex-row md:items-center md:pl-8">
+            <section class="flex flex-col md:flex-row md:items-center md:justify-between pl-4 pt-4 md:pl-8 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-800 rounded-2xl my-2">
                 <ul class="flex md:flex-col gap-2 my-2">
                     {pro.tags.map((tag) => (
                         <li
@@ -68,9 +82,13 @@ const PROJECTS = [
                 />
             </section>
 
-            <div>
-                <h4>Repo</h4>
-            </div>
+            <section class="flex flex-col bg-slate-600/35 md:gap-2 p-2 mt-3">
+                <a href={pro.github} target="_blank" class="flex gap-1">
+                    Repo <GitHubIcon />{" "}
+                </a>
+
+                {pro.link && <h4>enlace web</h4>}
+            </section>
         </article>
     ))
 }

@@ -1,7 +1,8 @@
 ---
 import ItemIcon from "../components/icons/ItemIcon.astro";
 
-const { title, date, description, abilities, link, latest } = Astro.props;
+const { title, date, description, abilities, link, latest, workplace } =
+    Astro.props;
 ---
 
 <div>
@@ -23,11 +24,7 @@ const { title, date, description, abilities, link, latest } = Astro.props;
         }
     </h3>
 
-    <time
-        class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-        >{date}</time
-    >
-    <p class="mb-4 text-md text-white dark:text-gray-400">
+    <p class="mb-2 text-md text-white dark:text-gray-400">
         {description}
     </p>
     <ol>
@@ -62,4 +59,16 @@ const { title, date, description, abilities, link, latest } = Astro.props;
             </a>
         )
     }
+    <section
+        class="flex flex-col md:flex-row items-center bg-slate-600/35 md:gap-2 p-2 mt-3 items-baseline"
+    >
+        <h4 class="text-sm">
+            {workplace}
+        </h4>
+
+        <time
+            class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+            >{date}</time
+        >
+    </section>
 </div>
