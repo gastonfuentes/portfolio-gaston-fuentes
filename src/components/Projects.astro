@@ -6,6 +6,7 @@ import BriefIcon from "./icons/BriefIcon.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
 import FigmaIcon from "./icons/FigmaIcon.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
+import WebIcon from "./icons/WebIcon.astro";
 
 const TAGS = {
     REACT: {
@@ -49,7 +50,7 @@ const PROJECTS = [
         title: "ElarGas - Sitio web institucional",
         description:
             "Desarrollé el sitio web Elargas a partir de un diseño UI proporcionado, utilizando tecnologías avanzadas como Astro, React y Tailwind CSS. Mi enfoque se centró en la implementación eficiente de la interfaz de usuario, asegurando una experiencia web fluida y atractiva para los usuarios finales.",
-        link: false,
+        link: "---",
         github: "https://github.com/nachoaar/qatarbets-frontend",
         image: "/qatarbetsAlpha.webp",
         tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWINDCSS],
@@ -82,12 +83,24 @@ const PROJECTS = [
                 />
             </section>
 
-            <section class="flex flex-col bg-slate-600/35 md:gap-2 p-2 mt-3">
-                <a href={pro.github} target="_blank" class="flex gap-1">
+            <section class="flex flex-row bg-slate-600/35 gap-4 p-2 mt-3 items-center">
+                <a
+                    href={pro.github}
+                    target="_blank"
+                    class="flex gap-1 items-center"
+                >
                     Repo <GitHubIcon />{" "}
                 </a>
 
-                {pro.link && <h4>enlace web</h4>}
+                {pro.link && (
+                    <a
+                        href={pro.github}
+                        target="_blank"
+                        class="flex gap-1 items-center"
+                    >
+                        Web <WebIcon />{" "}
+                    </a>
+                )}
             </section>
         </article>
     ))
