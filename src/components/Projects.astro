@@ -6,46 +6,55 @@ import BriefIcon from "./icons/BriefIcon.astro";
 import GitHubIcon from "./icons/GitHubIcon.astro";
 import FigmaIcon from "./icons/FigmaIcon.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
+import JavaScriptIcon from "./icons/JavaScriptIcon.astro";
+import HtmlIcon from "./icons/HtmlIcon.astro";
+import CssIcon from "./icons/CssIcon.astro";
 import WebIcon from "./icons/WebIcon.astro";
 
 const TAGS = {
     REACT: {
         name: "React",
-        class: "bg-[#23272f] text-[#149eca]",
+        class: "bg-transparent text-[#17191e]",
         icon: ReactIcon,
     },
     REDUX: {
         name: "Redux",
-        class: "bg-[#764abc] text-white",
+        class: "bg-transparent text-[#17191e]",
         icon: ReduxIcon,
     },
     TAILWINDCSS: {
         name: "Tailwindcss",
-        class: "bg-[#152e48] text-white",
+        class: "bg-transparent text-[#17191e]",
         icon: TailwindcssIcon,
     },
     FIGMA: {
-        name: "figma",
-        class: "bg-[#2c2e37] text-white",
+        name: "Figma",
+        class: "bg-transparent text-[#17191e]",
         icon: FigmaIcon,
     },
     ASTRO: {
         name: "Astro",
-        class: "bg-white text-[#17191e]",
+        class: "bg-transparent text-[#17191e]",
         icon: AstroIcon,
+    },
+    JAVASCRIPT: {
+        name: "JavaScript",
+        class: "bg-transparent text-[#17191e]",
+        icon: JavaScriptIcon,
+    },
+    HTML: {
+        name: "Html",
+        class: "bg-transparent text-[#17191e]",
+        icon: HtmlIcon,
+    },
+    CSS: {
+        name: "Css",
+        class: "bg-transparent text-[#17191e]",
+        icon: CssIcon,
     },
 };
 
 const PROJECTS = [
-    {
-        title: "Qatarbets - Sitio de apuestas",
-        description:
-            "En el proyecto final de SoyHenry, Qatarbets, lideré el diseño de la interfaz de usuario y de la base de datos. Formé parte del equipo de frontend, utilizando tecnologías como React, Redux Toolkits y Tailwind CSS para el desarrollo. Enfrenté el desafío principal de implementar filtros y ordenamientos mediante Redux Toolkit",
-        link: false,
-        github: "https://github.com/nachoaar/qatarbets-frontend",
-        image: "/qatarbetsAlpha.webp",
-        tags: [TAGS.FIGMA, TAGS.REACT, TAGS.REDUX, TAGS.TAILWINDCSS],
-    },
     {
         title: "ElarGas - Sitio web institucional",
         description:
@@ -54,6 +63,24 @@ const PROJECTS = [
         github: "https://github.com/nachoaar/qatarbets-frontend",
         image: "/qatarbetsAlpha.webp",
         tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWINDCSS],
+    },
+    {
+        title: "Qatarbets - Sitio de apuestas",
+        description:
+            "En el proyecto final de SoyHenry, Qatarbets, lideré el diseño de la interfaz de usuario y de la base de datos. Formé parte del equipo de frontend, utilizando tecnologías como React, Redux Toolkits y Tailwind CSS para el desarrollo. Enfrenté el desafío principal de implementar filtros y ordenamientos mediante Redux Toolkit",
+        link: "#",
+        github: "https://github.com/nachoaar/qatarbets-frontend",
+        image: "/qatarbetsAlpha.webp",
+        tags: [TAGS.FIGMA, TAGS.REACT, TAGS.REDUX, TAGS.TAILWINDCSS],
+    },
+    {
+        title: "BlackiJack - juego",
+        description:
+            "Este proyecto representa un retorno a las bases de la programación web, al desarrollar un juego de Blackjack utilizando únicamente HTML, JavaScript y CSS. La decisión de abstenerse de utilizar cualquier framework o biblioteca adicional fue un desafío consciente para profundizar en los fundamentos de la programación web y reforzar habilidades clave.",
+        link: "https://blacki-jack.netlify.app/",
+        github: "https://github.com/gastonfuentes/juego-blackjack-js",
+        image: "/blackijack3.webp",
+        tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
     },
 ];
 ---
@@ -64,11 +91,11 @@ const PROJECTS = [
             <h3 class="text-2xl font-semibold my-1">{pro.title}</h3>
             <p class="text-md text-pretty">{pro.description}</p>
 
-            <section class="flex flex-col md:flex-row md:items-center md:justify-between pl-4 pt-4 md:pl-4 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-800 rounded-2xl my-2">
+            <section class="flex flex-col md:flex-row md:items-center md:justify-between pl-4 pt-4 md:pl-4 bg-gradient-to-r from-gray-50 via-slate-100 to-[#00091d] rounded-2xl my-2">
                 <ul class="flex md:flex-col gap-2 my-2">
                     {pro.tags.map((tag) => (
                         <li
-                            class={` flex gap-1 py-1 rounded-full px-3 text-sm items-center ${tag.class}`}
+                            class={` flex gap-1 py-1 rounded-full px-3 text-sm items-center font-semibold ${tag.class}`}
                         >
                             <span>{<tag.icon />}</span>
                             {tag.name}
@@ -94,11 +121,11 @@ const PROJECTS = [
 
                 {pro.link && (
                     <a
-                        href={pro.github}
+                        href={pro.link}
                         target="_blank"
                         class="flex gap-1 items-center"
                     >
-                        Web <WebIcon />{" "}
+                        Demo <WebIcon />{" "}
                     </a>
                 )}
             </section>
