@@ -59,9 +59,9 @@ const PROJECTS = [
         title: "ElarGas - Sitio web institucional",
         description:
             "Desarrollé el sitio web Elargas a partir de un diseño UI proporcionado, utilizando tecnologías avanzadas como Astro, React y Tailwind CSS. Mi enfoque se centró en la implementación eficiente de la interfaz de usuario, asegurando una experiencia web fluida y atractiva para los usuarios finales.",
-        link: "---",
-        github: "https://github.com/nachoaar/qatarbets-frontend",
-        image: "/qatarbetsAlpha.webp",
+        link: "https://stellular-palmier-24c11d.netlify.app",
+        github: "https://github.com/elargas/elargas-web",
+        image: "/elargas-1.png",
         tags: [TAGS.ASTRO, TAGS.REACT, TAGS.TAILWINDCSS],
     },
     {
@@ -119,7 +119,7 @@ const PROJECTS = [
                     Repo <GitHubIcon />{" "}
                 </a>
 
-                {pro.link && (
+                {pro.link !== "#" && (
                     <a
                         href={pro.link}
                         target="_blank"
