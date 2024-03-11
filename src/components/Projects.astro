@@ -92,7 +92,7 @@ const PROJECTS = [
             <p class="text-pretty">{pro.description}</p>
 
             <section class="flex flex-col md:flex-row md:items-center md:justify-between pl-4 pt-4 md:pl-4  rounded-2xl my-2">
-                <ul class="flex md:flex-col gap-2 my-2">
+                <ul class="flex flex-wrap md:flex-col gap-2 my-2">
                     {pro.tags.map((tag) => (
                         <li
                             class={` flex gap-1 py-1 rounded-full px-3 text-sm items-center font-semibold ${tag.class}`}
